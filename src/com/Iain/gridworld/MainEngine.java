@@ -18,7 +18,7 @@ public class MainEngine {
 	private Canvas canvas;
 	private int gridWidth;
 	private int gridHeight;
-	private point[][] grid;
+	private grid[] world;
 
 	// constructor
 	public MainEngine(int gridWidth, int gridHeight) {
@@ -26,7 +26,10 @@ public class MainEngine {
 		canvas = new Canvas();
 		this.gridWidth = gridWidth;
 		this.gridHeight = gridHeight;
-		grid = new point[gridHeight][gridWidth];
+		
+		
+		//fix
+		world = new point[gridHeight][gridWidth];
 	}
 
 	// start the program
@@ -60,7 +63,7 @@ public class MainEngine {
 		graphics.clearRect(0, 0, 800, 600);
 
 		// drawing a grid
-		for (point[] yGrid : grid) {
+		for (point[] yGrid : world) {
 			for (point point : yGrid) {
 				// graphics.setColor(point.getColour());
 				// graphics.fillRect(square.getTrueX(), square.getTrueY(),

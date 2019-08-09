@@ -1,6 +1,9 @@
 package com.Iain.gridworld;
 
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 public class point {
 
@@ -11,6 +14,7 @@ public class point {
 	private int widthSize;
 	private int heightSize;
 	private BufferedImage texture;
+	private boolean walk;
 
 	public point(int x, int y, int height, int width, BufferedImage texture) {
 		this.x = x;
@@ -20,6 +24,44 @@ public class point {
 		this.trueX = x * width;
 		this.trueY = y * height;
 		this.texture = texture;
+		
+		int randomNum = (int)(Math.random() * 100);
+		if(randomNum < 30) {
+			try {
+				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/sand.gif"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.walk = true;
+		}else if (randomNum < 60) {
+			try {
+				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/puddle.gif"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.walk = true;
+		}else if(randomNum < 90) {
+			try {
+				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/rock.gif"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.walk = false;
+		}else if(randomNum < 95) {
+			try {
+				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/cacti.gif"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.walk = false;
+		}else {
+			try {
+				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/tree.gif"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+			this.walk = false;
+		}
 	}
 
 	public int getX() {
