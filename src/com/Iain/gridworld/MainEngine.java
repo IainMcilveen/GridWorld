@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -18,7 +19,7 @@ public class MainEngine {
 	private Canvas canvas;
 	private int gridWidth;
 	private int gridHeight;
-	private grid[] world;
+	private ArrayList<grid> world = new ArrayList<grid>();
 
 	// constructor
 	public MainEngine(int gridWidth, int gridHeight) {
@@ -27,9 +28,7 @@ public class MainEngine {
 		this.gridWidth = gridWidth;
 		this.gridHeight = gridHeight;
 		
-		
-		//fix
-		world = new point[gridHeight][gridWidth];
+		world.add(new grid(0,0,gridWidth,gridHeight));
 	}
 
 	// start the program
@@ -63,8 +62,9 @@ public class MainEngine {
 		graphics.clearRect(0, 0, 800, 600);
 
 		// drawing a grid
-		for (point[] yGrid : world) {
+		for (point[] yGrid : (world.get(0)).getTextures()) {
 			for (point point : yGrid) {
+				graphics.drawImage(point.getTexture(), point.getTrueX(), point.getTrueY(), point.getWidthSize(), point.getHeightSize(), null);
 				// graphics.setColor(point.getColour());
 				// graphics.fillRect(square.getTrueX(), square.getTrueY(),
 				// square.getWidthSize(), square.getHeightSize());
@@ -121,7 +121,7 @@ public class MainEngine {
 	}
 
 	public static void main(String[] args) {
-		new MainEngine(8, 6).start();
+		new MainEngine(20, 15).start();
 	}
 
 }

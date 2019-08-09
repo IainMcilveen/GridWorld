@@ -1,6 +1,7 @@
 package com.Iain.gridworld;
 
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -16,47 +17,46 @@ public class point {
 	private BufferedImage texture;
 	private boolean walk;
 
-	public point(int x, int y, int height, int width, BufferedImage texture) {
+	public point(int x, int y, int height, int width) {
 		this.x = x;
 		this.y = y;
 		this.widthSize = width;
 		this.heightSize = height;
 		this.trueX = x * width;
 		this.trueY = y * height;
-		this.texture = texture;
 		
 		int randomNum = (int)(Math.random() * 100);
-		if(randomNum < 30) {
+		if(randomNum < 65) {
 			try {
-				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/sand.gif"));
+				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\sand.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = true;
-		}else if (randomNum < 60) {
+		}else if (randomNum < 85) {
 			try {
-				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/puddle.gif"));
+				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\puddle.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = true;
 		}else if(randomNum < 90) {
 			try {
-				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/rock.gif"));
+				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\rock.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = false;
 		}else if(randomNum < 95) {
 			try {
-				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/cacti.gif"));
+				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\cacti.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = false;
 		}else {
 			try {
-				this.texture = ImageIO.read(point.class.getResourceAsStream("/textures/tree.gif"));
+				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\tree.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
