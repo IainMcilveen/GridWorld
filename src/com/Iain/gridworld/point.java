@@ -26,28 +26,28 @@ public class point {
 		this.trueY = y * height;
 		
 		int randomNum = (int)(Math.random() * 100);
-		if(randomNum < 65) {
+		if(randomNum < 84) {
 			try {
 				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\sand.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = true;
-		}else if (randomNum < 85) {
+		}else if (randomNum < 88) {
 			try {
 				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\puddle.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = true;
-		}else if(randomNum < 90) {
+		}else if(randomNum < 95) {
 			try {
 				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\rock.gif"));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
 			this.walk = false;
-		}else if(randomNum < 95) {
+		}else if(randomNum < 98) {
 			try {
 				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\cacti.gif"));
 			} catch (IOException e) {

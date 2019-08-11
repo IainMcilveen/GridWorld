@@ -23,7 +23,7 @@ public class MainEngine {
 
 	// constructor
 	public MainEngine(int gridWidth, int gridHeight) {
-		frame = new JFrame("grid game");
+		frame = new JFrame("grid world");
 		canvas = new Canvas();
 		this.gridWidth = gridWidth;
 		this.gridHeight = gridHeight;
@@ -65,9 +65,6 @@ public class MainEngine {
 		for (point[] yGrid : (world.get(0)).getTextures()) {
 			for (point point : yGrid) {
 				graphics.drawImage(point.getTexture(), point.getTrueX(), point.getTrueY(), point.getWidthSize(), point.getHeightSize(), null);
-				// graphics.setColor(point.getColour());
-				// graphics.fillRect(square.getTrueX(), square.getTrueY(),
-				// square.getWidthSize(), square.getHeightSize());
 			}
 		}
 
@@ -121,7 +118,7 @@ public class MainEngine {
 	}
 
 	public static void main(String[] args) {
-		new MainEngine(20, 15).start();
+		new MainEngine(20,15).start();
 	}
 
 }
