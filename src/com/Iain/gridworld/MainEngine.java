@@ -121,7 +121,7 @@ public class MainEngine {
 	}
 
 	public static void main(String[] args) {
-		new MainEngine(80,60).start();
+		new MainEngine(20,15).start();
 	}
 
 }
