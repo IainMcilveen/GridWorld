@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import com.Iain.gridworld.texture.textures;
+
 public class point {
 
 	private int x;
@@ -14,7 +16,7 @@ public class point {
 	private int trueY;
 	private int widthSize;
 	private int heightSize;
-	private BufferedImage texture;
+	private textures texture;
 	private boolean walk;
 
 	public point(int x, int y, int height, int width) {
@@ -27,39 +29,19 @@ public class point {
 		
 		int randomNum = (int)(Math.random() * 100);
 		if(randomNum < 84) {
-			try {
-				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\sand.gif"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			this.texture = texture.SAND; 
 			this.walk = true;
 		}else if (randomNum < 88) {
-			try {
-				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\puddle.gif"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			this.texture = texture.PUDDLE;
 			this.walk = true;
 		}else if(randomNum < 95) {
-			try {
-				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\rock.gif"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			this.texture = texture.ROCK;
 			this.walk = false;
 		}else if(randomNum < 98) {
-			try {
-				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\cacti.gif"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			this.texture = texture.CACTI;
 			this.walk = false;
 		}else {
-			try {
-				this.texture = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\tree.gif"));
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
+			this.texture = texture.TREE;
 			this.walk = false;
 		}
 	}
@@ -112,11 +94,11 @@ public class point {
 		this.heightSize = heightSize;
 	}
 
-	public BufferedImage getTexture() {
+	public textures getTexture() {
 		return texture;
 	}
 
-	public void setTexture(BufferedImage texture) {
+	public void setTexture(textures texture) {
 		this.texture = texture;
 	}
 
