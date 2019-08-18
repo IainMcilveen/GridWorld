@@ -5,6 +5,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.image.BufferStrategy;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
 import javax.swing.JFrame;
@@ -60,11 +61,13 @@ public class MainEngine {
 			graphics = buffStrat.getDrawGraphics();
 		}
 		graphics.clearRect(0, 0, 800, 600);
-
+		
+		texture textureRetreve = new texture();
 		// drawing a grid
 		for (point[] yGrid : (world.get(0)).getTextures()) {
 			for (point point : yGrid) {
-				graphics.drawImage(point.getTexture(), point.getTrueX(), point.getTrueY(), point.getWidthSize(), point.getHeightSize(), null);
+				BufferedImage temp = textureRetreve.getTexture(point.getTexture());
+				graphics.drawImage(temp, point.getTrueX(), point.getTrueY(), point.getWidthSize(), point.getHeightSize(), null);
 			}
 		}
 
@@ -118,7 +121,7 @@ public class MainEngine {
 	}
 
 	public static void main(String[] args) {
-		new MainEngine(20,15).start();
+		new MainEngine(80,60).start();
 	}
 
 }
