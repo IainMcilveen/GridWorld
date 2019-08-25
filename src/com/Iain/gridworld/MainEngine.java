@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class MainEngine {
 	private int gridWidth;
 	private int gridHeight;
 	private ArrayList<grid> world = new ArrayList<grid>();
+	private Input inputObj;
 
 	// constructor
 	public MainEngine(int gridWidth, int gridHeight) {
@@ -28,7 +30,7 @@ public class MainEngine {
 		canvas = new Canvas();
 		this.gridWidth = gridWidth;
 		this.gridHeight = gridHeight;
-		
+		this.inputObj = new Input();
 		world.add(new grid(0,0,gridWidth,gridHeight));
 	}
 
@@ -40,6 +42,8 @@ public class MainEngine {
 
 	// initalize the window
 	public void init() {
+		//adds keylistener to canvas 
+		canvas.addKeyListener(inputObj);
 		canvas.setPreferredSize(new Dimension(800, 600));
 		frame.add(canvas);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -50,7 +54,6 @@ public class MainEngine {
 
 	// update game logic
 	public void tick() {
-
 	}
 
 	// draw to the screen

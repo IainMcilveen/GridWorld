@@ -8,4 +8,6 @@ public class Player extends Entity {
 		super(x,y,textWid,textH,texture);
 	}
 	
+	
+	
 }
