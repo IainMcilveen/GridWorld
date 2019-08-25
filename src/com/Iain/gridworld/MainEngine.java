@@ -77,6 +77,7 @@ public class MainEngine {
 		graphics.setColor(Color.green);
 
 		buffStrat.show();
+		
 
 	}
 
