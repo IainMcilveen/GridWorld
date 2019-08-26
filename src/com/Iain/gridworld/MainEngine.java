@@ -23,6 +23,7 @@ public class MainEngine {
 	private int gridHeight;
 	private ArrayList<grid> world = new ArrayList<grid>();
 	private Input inputObj;
+	private Player player;
 
 	// constructor
 	public MainEngine(int gridWidth, int gridHeight) {
@@ -32,6 +33,8 @@ public class MainEngine {
 		this.gridHeight = gridHeight;
 		this.inputObj = new Input();
 		world.add(new grid(0,0,gridWidth,gridHeight));
+		this.player = new Player();
+		
 	}
 
 	// start the program
@@ -49,7 +52,6 @@ public class MainEngine {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
-
 	}
 
 	// update game logic
@@ -73,6 +75,9 @@ public class MainEngine {
 				graphics.drawImage(temp, point.getTrueX(), point.getTrueY(), point.getWidthSize(), point.getHeightSize(), null);
 			}
 		}
+		
+		//drawing player
+		
 
 		graphics.setColor(Color.green);
 

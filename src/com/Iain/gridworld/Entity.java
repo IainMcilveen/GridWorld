@@ -11,15 +11,14 @@ public class Entity {
 	private int textureHeight;
 	private BufferedImage entityTexture;
 	
-	public Entity(int x, int y, int textWid, int textH, BufferedImage texture) {
+	public Entity(int x, int y, BufferedImage texture) {
 		this.x = x;
 		this.y = y;
-		this.textureWidth = textWid;
-		this.textureHeight = textH;
+		this.entityTexture = texture;
+		this.textureWidth = texture.getWidth();
+		this.textureHeight = texture.getHeight();
 		this.trueX = x * trueX;
 		this.trueY = y * trueY;
-		this.entityTexture = texture;
-		
 	}
 
 }
