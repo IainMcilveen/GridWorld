@@ -34,6 +34,7 @@ public class MainEngine {
 		this.gridHeight = gridHeight;
 		this.inputObj = new Input();
 		world.add(new grid(0,0,gridWidth,gridHeight));
+		this.player = new Player(2,1,800/gridWidth,600/gridHeight,textureRetreve.getPlayer(),"Nub");
 		
 	}
 
@@ -43,9 +44,6 @@ public class MainEngine {
 		run();
 	}
 	
-	public void createPlayer() {
-		
-	}
 
 	// initalize the window
 	public void init() {
@@ -81,7 +79,7 @@ public class MainEngine {
 		}
 		
 		//drawing player
-		
+		graphics.drawImage(player.getEntityTexture(),player.getTrueX(),player.getTrueY(),player.getTextureWidth(),player.getTextureHeight(),null);
 
 		graphics.setColor(Color.green);
 

@@ -52,4 +52,9 @@ public class texture {
 		}return this.sand;
 		
 	}
+
+	public BufferedImage getPlayer() {
+		return player;
+	}
+
 }
