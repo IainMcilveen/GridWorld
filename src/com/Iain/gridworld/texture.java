@@ -13,10 +13,11 @@ public class texture {
 	private BufferedImage cacti;
 	private BufferedImage tree;
 	private BufferedImage puddle;
+	private BufferedImage player;
 	
 	
 	public enum textures{
-		SAND,ROCK,CACTI,TREE,PUDDLE;
+		SAND,ROCK,CACTI,TREE,PUDDLE,PLAYER;
 	}
 	
 	
@@ -27,6 +28,7 @@ public class texture {
 			this.cacti = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\cacti.gif"));
 			this.tree = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\tree.gif"));
 			this.puddle = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\puddle.gif"));
+			this.player = ImageIO.read(new File("C:\\java files\\GridWorld\\src\\com\\Iain\\gridworld\\textures\\player.png"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -44,7 +46,9 @@ public class texture {
 		case TREE:
 			return this.tree;
 		case PUDDLE:
-			return this.puddle;	
+			return this.puddle;
+		case PLAYER:
+			return this.player;
 		}return this.sand;
 		
 	}

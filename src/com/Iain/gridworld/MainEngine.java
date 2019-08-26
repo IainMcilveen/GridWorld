@@ -24,6 +24,7 @@ public class MainEngine {
 	private ArrayList<grid> world = new ArrayList<grid>();
 	private Input inputObj;
 	private Player player;
+	private texture textureRetreve = new texture();
 
 	// constructor
 	public MainEngine(int gridWidth, int gridHeight) {
@@ -33,7 +34,6 @@ public class MainEngine {
 		this.gridHeight = gridHeight;
 		this.inputObj = new Input();
 		world.add(new grid(0,0,gridWidth,gridHeight));
-		this.player = new Player();
 		
 	}
 
@@ -41,6 +41,10 @@ public class MainEngine {
 	public void start() {
 		running = true;
 		run();
+	}
+	
+	public void createPlayer() {
+		
 	}
 
 	// initalize the window
@@ -67,7 +71,7 @@ public class MainEngine {
 		}
 		graphics.clearRect(0, 0, 800, 600);
 		
-		texture textureRetreve = new texture();
+		
 		// drawing a grid
 		for (point[] yGrid : (world.get(0)).getTextures()) {
 			for (point point : yGrid) {
