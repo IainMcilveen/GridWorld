@@ -21,7 +21,13 @@ public class Input implements KeyListener {
 			this.player.moveForward();
 		}
 		if(e.getKeyCode() == 68) {
-			
+			this.player.moveRight();
+		}
+		if(e.getKeyCode() == 83) {
+			this.player.moveBack();
+		}
+		if(e.getKeyCode() == 65) {
+			this.player.moveLeft();
 		}
 	}
 
