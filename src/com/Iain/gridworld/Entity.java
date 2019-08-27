@@ -3,13 +3,13 @@ package com.Iain.gridworld;
 import java.awt.image.BufferedImage;
 
 public class Entity {
-	private int x;
-	private int y;
-	private int trueX;
-	private int trueY;
-	private int textureWidth;
-	private int textureHeight;
-	private BufferedImage entityTexture;
+	protected int x;
+	protected int y;
+	protected int trueX;
+	protected int trueY;
+	protected int textureWidth;
+	protected int textureHeight;
+	protected BufferedImage entityTexture;
 	
 	public Entity(int x, int y, int imgWidth, int imgHeight, BufferedImage texture) {
 		this.x = x;
@@ -17,6 +17,11 @@ public class Entity {
 		this.entityTexture = texture;
 		this.textureWidth = imgWidth;
 		this.textureHeight = imgHeight;
+		this.trueX = x * this.textureWidth;
+		this.trueY = y * this.textureHeight;
+	}
+	
+	public void updateCoords() {
 		this.trueX = x * this.textureWidth;
 		this.trueY = y * this.textureHeight;
 	}
