@@ -19,14 +19,14 @@ public class Player extends Entity {
 	}
 	
 	public void moveBack() {
-		if(this.y < this.textureHeight*600) {
+		if(this.y < (600/this.textureHeight)-1) {
 			this.y += 1;
 			this.updateCoords();
 		}
 	}
 	
 	public void moveRight() {
-		if(this.x < this.textureWidth*800) {
+		if(this.x < (800/this.textureWidth)-1) {
 			this.x += 1;
 			this.updateCoords();
 		}
