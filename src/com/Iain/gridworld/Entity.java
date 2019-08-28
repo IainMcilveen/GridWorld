@@ -10,8 +10,9 @@ public class Entity {
 	protected int textureWidth;
 	protected int textureHeight;
 	protected BufferedImage entityTexture;
+	protected grid worldGrid;
 	
-	public Entity(int x, int y, int imgWidth, int imgHeight, BufferedImage texture) {
+	public Entity(int x, int y, int imgWidth, int imgHeight, BufferedImage texture, grid worldGrid) {
 		this.x = x;
 		this.y = y;
 		this.entityTexture = texture;
@@ -19,6 +20,7 @@ public class Entity {
 		this.textureHeight = imgHeight;
 		this.trueX = x * this.textureWidth;
 		this.trueY = y * this.textureHeight;
+		this.worldGrid = worldGrid;
 	}
 	
 	public void updateCoords() {

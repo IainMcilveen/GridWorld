@@ -32,9 +32,9 @@ public class MainEngine {
 		canvas = new Canvas();
 		this.gridWidth = gridWidth;
 		this.gridHeight = gridHeight;
-		this.player = new Player(2,1,800/gridWidth,600/gridHeight,textureRetreve.getPlayer(),"Nub");
-		this.inputObj = new Input(this.player);
 		world.add(new grid(0,0,gridWidth,gridHeight));
+		this.player = new Player(2,1,800/gridWidth,600/gridHeight,textureRetreve.getPlayer(),world.get(0),"Nub");
+		this.inputObj = new Input(this.player);
 		
 	}
 

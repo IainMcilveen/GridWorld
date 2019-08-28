@@ -16,7 +16,7 @@ public class Input implements KeyListener {
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		System.out.println(e);
+		//System.out.println(e);
 		if(e.getKeyCode() == 87) {
 			this.player.moveForward();
 		}
