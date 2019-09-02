@@ -24,7 +24,7 @@ public class texture {
 	public texture() {
 		try {
 			String currentDirectory = System.getProperty("user.dir");
-			System.out.println(currentDirectory);
+			//System.out.println(currentDirectory);
 			this.sand = ImageIO.read(new File(currentDirectory+"\\src\\com\\Iain\\gridworld\\textures\\sand.gif"));
 			this.rock = ImageIO.read(new File(currentDirectory+"\\src\\com\\Iain\\gridworld\\textures\\rock.gif"));
 			this.cacti = ImageIO.read(new File(currentDirectory+"\\src\\com\\Iain\\gridworld\\textures\\cacti.gif"));

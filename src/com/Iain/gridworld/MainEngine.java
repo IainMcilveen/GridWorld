@@ -34,7 +34,7 @@ public class MainEngine {
 		this.gridWidth = gridWidth;
 		this.gridHeight = gridHeight;
 		world.add(new grid(0,0,gridWidth,gridHeight));
-		this.player = new Player(2,1,800/gridWidth,600/gridHeight,textureRetreve.getPlayer(),world.get(0),"Nub");
+		this.player = new Player(this,2,1,800/gridWidth,600/gridHeight,textureRetreve.getPlayer(),world.get(0),"Nub");
 		this.inputObj = new Input(this.player);
 		
 	}
@@ -120,6 +120,7 @@ public class MainEngine {
 				ticks = frames = 0;
 				lastSecond = time;
 			}
+			System.out.println(world.size());
 		}
 		term();
 	}
@@ -127,17 +128,21 @@ public class MainEngine {
 	public boolean levelExists(int newGridX, int newGridY) {
 		
 		int tempGridX, tempGridY;
+		grid tempGrid;
 		boolean exists = false;
 		Iterator<grid> gridIterator = world.iterator();
 		while(gridIterator.hasNext()) {
-			tempGridX = gridIterator.next().getGridPosX();
-			tempGridY = gridIterator.next().getGridPosY();
+			tempGrid = gridIterator.next();
+			tempGridX = tempGrid.getGridPosX();
+			tempGridY = tempGrid.getGridPosY();
 			if(newGridX == tempGridX && newGridY == tempGridY) {
 				exists = true;
 			}
 		}
 		return exists;
 	}
+	
+	
 
 	public boolean isRunning() {
 		return running;
@@ -145,6 +150,18 @@ public class MainEngine {
 
 	public void setRunning(boolean running) {
 		this.running = running;
+	}
+	
+	public void addLevel(grid newGrid) {
+		this.world.add(newGrid);
+	}
+
+	public int getGridWidth() {
+		return gridWidth;
+	}
+
+	public int getGridHeight() {
+		return gridHeight;
 	}
 
 	public static void main(String[] args) {

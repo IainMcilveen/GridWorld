@@ -8,8 +8,8 @@ public class Player extends Entity {
 	private int worldX;
 	private int worldY;
 	
-	public Player(int x, int y, int imgWidth, int imgHeight, BufferedImage texture, grid worldGrid, String name) {
-		super(x,y,imgWidth,imgHeight,texture, worldGrid);
+	public Player(MainEngine main, int x, int y, int imgWidth, int imgHeight, BufferedImage texture, grid worldGrid, String name) {
+		super(main,x,y,imgWidth,imgHeight,texture, worldGrid);
 		this.name = name;
 		this.worldX = 0;
 		this.worldY = 0;
@@ -24,6 +24,13 @@ public class Player extends Entity {
 			}
 		}else if(this.y == 0) {
 			System.out.println("top");
+			System.out.println(main.levelExists(this.worldX,this.worldY+1));
+			boolean levelExists = main.levelExists(this.worldX, this.worldY+1);
+			if(levelExists == false) {
+				grid newGrid = new grid(this.worldX,this.worldY+1,main.getGridWidth(),main.getGridHeight());
+				main.addLevel(newGrid);
+				this.worldY += 1;
+			}
 		}
 	}
 	

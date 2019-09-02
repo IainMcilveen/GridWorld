@@ -26,7 +26,6 @@ public class grid {
 		}
 		return temp;
 	}
-	
 
 	public int getGridPosX() {
 		return gridPosX;

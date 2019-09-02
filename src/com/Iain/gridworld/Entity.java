@@ -11,8 +11,10 @@ public class Entity {
 	protected int textureHeight;
 	protected BufferedImage entityTexture;
 	protected grid worldGrid;
+	protected MainEngine main;
 	
-	public Entity(int x, int y, int imgWidth, int imgHeight, BufferedImage texture, grid worldGrid) {
+	public Entity(MainEngine main,int x, int y, int imgWidth, int imgHeight, BufferedImage texture, grid worldGrid) {
+		this.main = main;
 		this.x = x;
 		this.y = y;
 		this.entityTexture = texture;
