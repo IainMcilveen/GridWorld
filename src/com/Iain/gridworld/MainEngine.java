@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import javax.swing.JFrame;
 
@@ -121,6 +122,21 @@ public class MainEngine {
 			}
 		}
 		term();
+	}
+	
+	public boolean levelExists(int newGridX, int newGridY) {
+		
+		int tempGridX, tempGridY;
+		boolean exists = false;
+		Iterator<grid> gridIterator = world.iterator();
+		while(gridIterator.hasNext()) {
+			tempGridX = gridIterator.next().getGridPosX();
+			tempGridY = gridIterator.next().getGridPosY();
+			if(newGridX == tempGridX && newGridY == tempGridY) {
+				exists = true;
+			}
+		}
+		return exists;
 	}
 
 	public boolean isRunning() {
