@@ -9,7 +9,6 @@ import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Iterator;
-
 import javax.swing.JFrame;
 
 public class MainEngine {
@@ -120,7 +119,6 @@ public class MainEngine {
 				ticks = frames = 0;
 				lastSecond = time;
 			}
-			//System.out.println(world.size());
 		}
 		term();
 	}
@@ -134,8 +132,6 @@ public class MainEngine {
 			tempGrid = gridIterator.next();
 			tempGridX = tempGrid.getGridPosX();
 			tempGridY = tempGrid.getGridPosY();
-			//System.out.println("tp"+tempGridX+" "+tempGridY);
-			//System.out.println("gnp"+newGridX+" "+newGridY);
 			if(newGridX == tempGridX && newGridY == tempGridY) {
 				return tempGrid;
 			}

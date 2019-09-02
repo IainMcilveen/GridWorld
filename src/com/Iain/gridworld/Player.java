@@ -23,8 +23,6 @@ public class Player extends Entity {
 				this.updateCoords();
 			}
 		}else if(this.y == 0) {
-			//System.out.println("top");
-			//System.out.println(main.levelExists(this.worldX,this.worldY+1));
 			grid levelExists = main.levelExists(this.worldX, this.worldY+1);
 			if(levelExists == null) {
 				grid newGrid = new grid(this.worldX,this.worldY+1,main.getGridWidth(),main.getGridHeight());
@@ -50,7 +48,6 @@ public class Player extends Entity {
 				this.updateCoords();
 			}
 		}else if(this.y+1 == worldGrid.getTextures().length) {
-			//System.out.println("bottom");
 			grid levelExists = main.levelExists(this.worldX, this.worldY-1);
 			if(levelExists == null) {
 				grid newGrid = new grid(this.worldX,this.worldY-1,main.getGridWidth(),main.getGridHeight());
@@ -76,7 +73,6 @@ public class Player extends Entity {
 				this.updateCoords();
 			}
 		}else if(this.x+1 == worldGrid.getTextures()[0].length) {
-			//System.out.println("right");
 			grid levelExists = main.levelExists(this.worldX+1, this.worldY);
 			if(levelExists == null) {
 				grid newGrid = new grid(this.worldX+1,this.worldY,main.getGridWidth(),main.getGridHeight());
@@ -102,7 +98,6 @@ public class Player extends Entity {
 				this.updateCoords();
 			}
 		}else if(this.x == 0) {
-			//System.out.println("left");
 			grid levelExists = main.levelExists(this.worldX-1, this.worldY);
 			if(levelExists == null) {
 				grid newGrid = new grid(this.worldX-1,this.worldY,main.getGridWidth(),main.getGridHeight());
