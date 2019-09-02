@@ -5,10 +5,14 @@ import java.awt.image.BufferedImage;
 public class Player extends Entity {
 	
 	private String name;
+	private int worldX;
+	private int worldY;
 	
 	public Player(int x, int y, int imgWidth, int imgHeight, BufferedImage texture, grid worldGrid, String name) {
 		super(x,y,imgWidth,imgHeight,texture, worldGrid);
 		this.name = name;
+		this.worldX = 0;
+		this.worldY = 0;
 	}
 	
 	public void moveForward() {
@@ -18,6 +22,8 @@ public class Player extends Entity {
 				this.y -= 1;
 				this.updateCoords();
 			}
+		}else if(this.y == 0) {
+			System.out.println("top");
 		}
 	}
 	
@@ -28,6 +34,8 @@ public class Player extends Entity {
 				this.y += 1;
 				this.updateCoords();
 			}
+		}else if(this.y+1 == worldGrid.getTextures().length) {
+			System.out.println("bottom");
 		}
 	}
 	
@@ -38,6 +46,8 @@ public class Player extends Entity {
 				this.x += 1;
 				this.updateCoords();
 			}
+		}else if(this.x+1 == worldGrid.getTextures()[0].length) {
+			System.out.println("right");
 		}
 	}
 	
@@ -48,6 +58,8 @@ public class Player extends Entity {
 				this.x -= 1;
 				this.updateCoords();
 			}
+		}else if(this.x == 0) {
+			System.out.println("left");
 		}
 	}
 

@@ -26,6 +26,26 @@ public class grid {
 		}
 		return temp;
 	}
+	
+	public void moveLevels(String direction) {
+		
+		if(direction.equals("top")){
+			
+		}
+		
+		if(direction.equals("bottom")){
+			
+		}
+		
+		if(direction.equals("right")){
+			
+		}
+		
+		if(direction.equals("left")){
+			
+		}
+		
+	}
 
 	public int getGridPosX() {
 		return gridPosX;
