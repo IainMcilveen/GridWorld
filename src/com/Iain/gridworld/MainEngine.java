@@ -72,7 +72,7 @@ public class MainEngine {
 		
 		
 		// drawing a grid
-		for (point[] yGrid : (world.get(0)).getTextures()) {
+		for (point[] yGrid : (player.worldGrid.getTextures())) {
 			for (point point : yGrid) {
 				BufferedImage temp = textureRetreve.getTexture(point.getTexture());
 				graphics.drawImage(temp, point.getTrueX(), point.getTrueY(), point.getWidthSize(), point.getHeightSize(), null);
@@ -120,26 +120,27 @@ public class MainEngine {
 				ticks = frames = 0;
 				lastSecond = time;
 			}
-			System.out.println(world.size());
+			//System.out.println(world.size());
 		}
 		term();
 	}
 	
-	public boolean levelExists(int newGridX, int newGridY) {
+	public grid levelExists(int newGridX, int newGridY) {
 		
 		int tempGridX, tempGridY;
 		grid tempGrid;
-		boolean exists = false;
 		Iterator<grid> gridIterator = world.iterator();
 		while(gridIterator.hasNext()) {
 			tempGrid = gridIterator.next();
 			tempGridX = tempGrid.getGridPosX();
 			tempGridY = tempGrid.getGridPosY();
+			//System.out.println("tp"+tempGridX+" "+tempGridY);
+			//System.out.println("gnp"+newGridX+" "+newGridY);
 			if(newGridX == tempGridX && newGridY == tempGridY) {
-				exists = true;
+				return tempGrid;
 			}
 		}
-		return exists;
+		return null;
 	}
 	
 	
