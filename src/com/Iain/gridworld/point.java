@@ -9,14 +9,6 @@ import com.Iain.gridworld.texture.textures;
 
 public class point {
 
-	public boolean isWalk() {
-		return walk;
-	}
-
-	public void setWalk(boolean walk) {
-		this.walk = walk;
-	}
-
 	private int x;
 	private int trueX;
 	private int y;
@@ -51,6 +43,14 @@ public class point {
 			this.texture = texture.TREE;
 			this.walk = false;
 		}
+	}
+	
+	public boolean isWalk() {
+		return walk;
+	}
+
+	public void setWalk(boolean walk) {
+		this.walk = walk;
 	}
 
 	public int getX() {
